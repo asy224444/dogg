@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>척척박사 멍박사</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: rgb(99, 217, 214);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .con {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .doc {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -30%);filter: drop-shadow(3px 3px 3px);
+        }
+
+          #avo {
+            z-index: 1;
+            position: absolute;
+            left: 1400px;
+            top: 400px;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateAvo 2s infinite alternate;
+        }
+
+        #gal {
+            z-index: 1;
+            position: absolute;
+            left: 1250px;
+            top: 700px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateGal 2.3s infinite alternate;
+        }
+         #grape{
+            z-index: 1;
+            position: absolute;
+            left: 350px;
+            top: 300px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateGrape 2.5s infinite alternate;
+        }
+        #spot{
+            z-index: 1;
+            position: absolute;
+            left: 1150px;
+            top: 100px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateGrape 2.5s infinite alternate;
+        }
+        #choco{
+            z-index: 1;
+            position: absolute;
+            left: 320px;
+            top: 730px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateChoco 3.1s infinite alternate;
+        }
+        #bab{
+            z-index: 1;
+            position: absolute;
+            left: 120px;
+            top: 130px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateChoco 3.1s infinite alternate;
+        }
+         #wme{
+            z-index: 1;
+            position: absolute;
+            left: 80px;
+            top: 570px;
+            height: auto;
+            cursor: move; 
+            filter: drop-shadow(3px 3px 3px);
+            animation: rotateGal 1.1s infinite alternate;
+        }
+@keyframes rotateGrape {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(60deg);
+            }
+        }
+        @keyframes rotateAvo {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes rotateChoco {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(40deg);
+            }
+        }
+        @keyframes rotateAvo {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes rotateGal {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+
+        #pop1 {
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            cursor: pointer; 
+        }
+         #pop2 {
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="doc" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="doc.png"></div>
+        <img id="avo" src="avoka.png" draggable="true" ondragend="dragEnd('avo', 'pop1')">
+        
+        <img id="gal" src="gal.png" draggable="true" ondragend="dragEnd('gal', 'pop2')">
+        <img id="grape" src="grape.png"draggable="true" ondragend="dragEnd('grape', 'pop3')">
+         <img id="choco" src="choco.png"draggable="true" ondragend="dragEnd('choco', 'pop4')">
+          <img id="wme" src="wme.png"draggable="true"> 
+           <img id="bab" src="bab.png"draggable="true">
+            <img id="spot" src="spot.png"draggable="true">  
+
+        <img id="pop1" src="avopop.png" onclick="hidePopup('pop1')">
+        <img id="pop2" src="galpop.png" onclick="hidePopup('pop2')">
+    </div>
+
+    <script type="text/javascript">
+        function dragEnd(imageId, popId) {
+            document.getElementById(popId).style.display = 'block';
+            document.getElementById(imageId).style.display = 'none';
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData('text/plain');
+            if (data === 'avo') {
+                document.getElementById('avo').style.display = 'none';
+                document.getElementById('pop1').style.display = 'block';
+            } else if (data === 'gal') {
+                document.getElementById('gal').style.display = 'none';
+                document.getElementById('pop2').style.display = 'block';
+            }
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function hidePopup(popId) {
+            document.getElementById(popId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
