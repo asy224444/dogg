@@ -96,7 +96,7 @@
             height: auto;
             cursor: move; 
             filter: drop-shadow(3px 3px 3px);
-            animation: rotateGal 1.1s infinite alternate;
+            animation: rotateGal 2 .1s infinite alternate;
         }
 @keyframes rotateGrape {
             0% {
@@ -149,6 +149,7 @@
             transform: translate(-50%, -50%);
             display: none;
             cursor: pointer; 
+            filter: drop-shadow(5px 10px 6px);
         }
          #pop2 {
             z-index: 3;
@@ -158,6 +159,37 @@
             transform: translate(-50%, -50%);
             display: none;
             cursor: pointer; 
+            filter: drop-shadow(5px 10px 6px);
+        }
+         #pop3 {
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            cursor: pointer; 
+            filter: drop-shadow(5px 10px 6px);
+        }
+         #pop4 {
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            cursor: pointer; 
+            filter: drop-shadow(5px 10px 6px);
+        }
+         #pop5 {
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            cursor: pointer; 
+            
         }
     </style>
 </head>
@@ -169,12 +201,15 @@
         <img id="gal" src="gal.png" draggable="true" ondragend="dragEnd('gal', 'pop2')">
         <img id="grape" src="grape.png"draggable="true" ondragend="dragEnd('grape', 'pop3')">
          <img id="choco" src="choco.png"draggable="true" ondragend="dragEnd('choco', 'pop4')">
-          <img id="wme" src="wme.png"draggable="true"> 
-           <img id="bab" src="bab.png"draggable="true">
-            <img id="spot" src="spot.png"draggable="true">  
+            <img id="wme" src="wme.png"draggable="true"ondragend="dragEnd('wme', 'pop5')"> 
+            <img id="bab" src="bab.png"draggable="true"ondragend="dragEnd('bab', 'pop5')">
+            <img id="spot" src="spot.png"draggable="true"ondragend="dragEnd('spot', 'pop5')">  
 
         <img id="pop1" src="avopop.png" onclick="hidePopup('pop1')">
         <img id="pop2" src="galpop.png" onclick="hidePopup('pop2')">
+        <img id="pop3" src="grapepop.png" onclick="hidePopup('pop3')">
+         <img id="pop4" src="chocopop.png" onclick="hidePopup('pop4')">
+         <img id="pop5" src="circle.png" onclick="hidePopup('pop5')">
     </div>
 
     <script type="text/javascript">
