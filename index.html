@@ -4,101 +4,162 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>척척박사 멍박사</title>
+
     <style type="text/css">
+        @font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
         body {
             margin: 0;
             background-color: rgb(99, 217, 214);
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            height: 100vh;
+            height: auto;
             overflow: hidden;
+             background-image: url("background.png");
+              background-size : cover ;
+
+
         }
-        .con {
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
+       
 
         .doc {
             position: fixed;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -30%);filter: drop-shadow(3px 3px 3px);
+            transform: translate(-50%, -30%);
+            filter: drop-shadow(3px 3px 3px);
+            animation: bounceIn 0.5s ease-out; /* 새로 추가한 애니메이션 */
+        }
+ @keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.akf {
+    position: fixed;
+    left: 50%;
+    top: -14%;
+    transform: translate(-50%, -30%);
+    
+    animation: bounceIn 0.4s ease-out;  /* 두 개의 애니메이션을 동시에 적용 */
+}
+        #pop5 {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -30%);
         }
 
-          #avo {
-            z-index: 1;
-            position: absolute;
-            left: 1400px;
-            top: 400px;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateAvo 2s infinite alternate;
+        #avo {
+     z-index: 1;
+     position: fixed;
+            left: 60%;
+            top: 40%;
+            width:16%;
+            transform: translate(-50%, -30%);
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateAvo 2s infinite alternate;
+}
+
+#gal {
+    z-index: 1;
+     position: fixed;
+            left: 78%;
+            top: 20%;
+             width:16%;
+            transform: translate(-50%, -30%);
+           
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateGal 2.3s infinite alternate;
+
+}
+
+#grape {
+    z-index: 1;
+     position: fixed;
+            left: 20%;
+            top: 50%;
+            transform: translate(-50%, -30%);
+            width: 20%;
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateGrape 2.5s infinite alternate;
+}
+
+#spot {
+      z-index: 1;
+     position: fixed;
+            left: 5%;
+            top: 70%;
+            width:16%;
+            transform: translate(-50%, -30%);
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateGrape 2.5s infinite alternate;
+}
+
+#choco {
+      z-index: 1;
+     position: fixed;
+            left: 2%;
+            top: 33%;
+             width:19%;
+            transform: translate(-50%, -30%);
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateChoco 2.1s infinite alternate;
+}
+
+#bab {
+     z-index: 1;
+     position: fixed;
+            left: 15%;
+            top: 8%;
+             width:16%;
+            transform: translate(-50%, -30%);
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateGal 3.1s infinite alternate;
+}
+
+#wme {
+    z-index: 1;
+     position: fixed;
+            left: 76%;
+            top: 66%;
+             width:16%;
+            transform: translate(-50%, -30%);
+    cursor: move; 
+    filter: drop-shadow(3px 3px 3px);
+    animation: rotateGal 2.1s infinite alternate;
+}
+
+
+        @keyframes bounceIn {
+            0% {
+                transform: translate(-50%, -30%) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -30%) scale(1);
+            }
         }
 
-        #gal {
-            z-index: 1;
-            position: absolute;
-            left: 1250px;
-            top: 700px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateGal 2.3s infinite alternate;
-        }
-         #grape{
-            z-index: 1;
-            position: absolute;
-            left: 350px;
-            top: 300px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateGrape 2.5s infinite alternate;
-        }
-        #spot{
-            z-index: 1;
-            position: absolute;
-            left: 1150px;
-            top: 100px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateGrape 2.5s infinite alternate;
-        }
-        #choco{
-            z-index: 1;
-            position: absolute;
-            left: 320px;
-            top: 730px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateChoco 3.1s infinite alternate;
-        }
-        #bab{
-            z-index: 1;
-            position: absolute;
-            left: 120px;
-            top: 130px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateChoco 3.1s infinite alternate;
-        }
-         #wme{
-            z-index: 1;
-            position: absolute;
-            left: 80px;
-            top: 570px;
-            height: auto;
-            cursor: move; 
-            filter: drop-shadow(3px 3px 3px);
-            animation: rotateGal 2 .1s infinite alternate;
-        }
-@keyframes rotateGrape {
+        @keyframes rotateGrape {
             0% {
                 transform: rotate(0deg);
             }
@@ -119,7 +180,7 @@
                 transform: rotate(0deg);
             }
             100% {
-                transform: rotate(40deg);
+                transform: rotate(-40deg);
             }
         }
         @keyframes rotateAvo {
@@ -139,7 +200,6 @@
                 transform: rotate(30deg);
             }
         }
-
 
         #pop1 {
             z-index: 3;
@@ -182,35 +242,99 @@
             filter: drop-shadow(5px 10px 6px);
         }
          #pop5 {
-            z-index: 3;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            z-index: 2;
             display: none;
             cursor: pointer; 
-            
         }
+ header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fcfcfc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 설정 */
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0; /* 화면 상단으로 정렬 */
+    width: 100%; /* 너비 100%로 설정 */
+}
+
+nav {
+    display: flex;
+    gap: 60px;
+    padding: 0 80px; /* 좌우 padding 추가 */
+}
+
+nav a {
+    color: #174948;
+    text-decoration: none;
+    
+     font-family: 'KCC-Ganpan';
+     font-size: 1.3rem;
+ 
+}
+
+.logo {
+    display: flex;
+  
+    padding: 0 40px; /* 좌우 padding 추가 */
+}
+nav a:hover {
+    color: #ff0000; /* 원하는 색상으로 변경 */
+}
+
     </style>
+
 </head>
 <body>
-    <div class="con">
-        <div class="doc" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="doc.png"></div>
+     <header>
+        <div class="logo">
+            <a href="https://www.example.com">
+            <img style="width: 140px;height: auto;" src="logo.png">
+           </a>
+        </div>
+        <nav>
+
+            <a href="#section1">밥먹기</a>
+            <a href="#section2">산책가기</a>
+        </nav>
+    </header>
+   
+    <section>
+    <div class=wrapper>
+         
+    
+      
+        
+        <div class="doc" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="doc.png" >
+            <img src="akfvndtjs.png" class="akf">
+
+        </div>
         <img id="avo" src="avoka.png" draggable="true" ondragend="dragEnd('avo', 'pop1')">
         
         <img id="gal" src="gal.png" draggable="true" ondragend="dragEnd('gal', 'pop2')">
-        <img id="grape" src="grape.png"draggable="true" ondragend="dragEnd('grape', 'pop3')">
-         <img id="choco" src="choco.png"draggable="true" ondragend="dragEnd('choco', 'pop4')">
-            <img id="wme" src="wme.png"draggable="true"ondragend="dragEnd('wme', 'pop5')"> 
-            <img id="bab" src="bab.png"draggable="true"ondragend="dragEnd('bab', 'pop5')">
-            <img id="spot" src="spot.png"draggable="true"ondragend="dragEnd('spot', 'pop5')">  
+        <img id="grape" src="grape.png" draggable="true" ondragend="dragEnd('grape', 'pop3')">
+        <img id="choco" src="choco.png" draggable="true" ondragend="dragEnd('choco', 'pop4')">
+        <img id="wme" src="wme.png" draggable="true" ondragend="dragEnd('wme', 'pop5')"> 
+        <img id="bab" src="bab.png" draggable="true" ondragend="dragEnd('bab', 'pop5')">
+        <img id="spot" src="spot.png" draggable="true" ondragend="dragEnd('spot', 'pop5')">  
 
         <img id="pop1" src="avopop.png" onclick="hidePopup('pop1')">
         <img id="pop2" src="galpop.png" onclick="hidePopup('pop2')">
         <img id="pop3" src="grapepop.png" onclick="hidePopup('pop3')">
-         <img id="pop4" src="chocopop.png" onclick="hidePopup('pop4')">
-         <img id="pop5" src="circle.png" onclick="hidePopup('pop5')">
+        <img id="pop4" src="chocopop.png" onclick="hidePopup('pop4')">
+        <img id="pop5" src="circle.png" onclick="hidePopup('pop5')">
+  
     </div>
+    <audio id="yumSound">
+  <source src="yum.mp3" type="audio/mp3">
+  
+</audio>
+<audio id="wrongSound">
+  <source src="wrong.mp3" type="audio/mp3">
+  
+</audio>
+</section>
 
     <script type="text/javascript">
         function dragEnd(imageId, popId) {
@@ -237,6 +361,36 @@
         function hidePopup(popId) {
             document.getElementById(popId).style.display = 'none';
         }
+   function dragEnd(imageId, popId) {
+  document.getElementById(popId).style.display = 'block';
+  document.getElementById(imageId).style.display = 'none';
+
+  // Check if the dragged image is 'bab', 'wme', or 'spot' and play the "yum" sound
+  if (imageId === 'bab' || imageId === 'wme' || imageId === 'spot') {
+    var yumSound = document.getElementById('yumSound');
+    yumSound.play();
+  }
+
+  // Check if the dragged image is 'avoka', 'choco', or 'grape' and play the "wrong" sound
+  if (imageId === 'avo' || imageId === 'choco'|| imageId === 'gal' || imageId === 'grape') {
+    var wrongSound = document.getElementById('wrongSound');
+    wrongSound.play();
+  }
+
+  // Check if all images are hidden
+  if (
+   
+    document.getElementById('bab').style.display === 'none' &&
+    document.getElementById('wme').style.display === 'none' &&
+    document.getElementById('spot').style.display === 'none'
+  ) {
+    // 3초 후에 다른 사이트로 이동
+    setTimeout(function () {
+      window.location.href = 'https://www.example.com'; // 원하는 URL로 대체
+    }, 1000);
+  }
+}
+
     </script>
 </body>
 </html>
